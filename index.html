@@ -1,70 +1,514 @@
-<section class="founder-section">
-  <div class="container founder-grid">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Cover</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: rgba(255,255,255,0.03);
+      --border: rgba(255,255,255,0.10);
+      --muted: rgba(255,255,255,0.70);
+      --soft: rgba(255,255,255,0.45);
+      --navy: #0a1a2f;
+      --light-panel: #e5e7eb;
+      --text-dark: #111111;
+      font-family: Arial, sans-serif;
+    }
 
-    <div class="founder-image-wrap">
-      <img class="founder-image" src="./andres.jpg" alt="Andres Godoy">
-      <div class="image-overlay"></div>
-    </div>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #000; color: white; }
+    body { background: var(--bg); }
+    a { text-decoration: none; }
 
-    <div>
-      <p class="eyebrow">Founder</p>
-      <h2 class="founder-name">Andres Godoy</h2>
-      <p class="founder-title">Former Special Agent & Intelligence Officer</p>
-      <div class="rule"></div>
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-      <p class="founder-copy strong">
-        Andres Godoy brings a career defined by operational leadership across federal law enforcement and intelligence environments.
-      </p>
+    .hero {
+      border-bottom: 1px solid var(--border);
+      background: #000;
+    }
 
-      <p class="founder-copy">
-        He has led and supported complex investigations, interagency operations, and strategic initiatives across domestic and international contexts.
-      </p>
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: end;
+      padding: 80px 0 96px;
+    }
 
-      <p class="founder-copy">
-        Contact Cover was built to provide clients with the same level of clarity, positioning, and strategic advantage required to succeed in highly competitive career landscapes.
-      </p>
+    .eyebrow {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: .42em;
+      color: var(--soft);
+      font-size: 12px;
+    }
 
-      <!-- CALENDLY BUTTON -->
-      <div style="margin-top:30px;">
-        <a href="https://calendly.com/YOUR-LINK" target="_blank" class="btn btn-light">
-          Schedule Consultation
-        </a>
+    h1 {
+      margin: 14px 0 0;
+      font-size: clamp(52px, 8vw, 88px);
+      line-height: .95;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.05;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.1;
+    }
+
+    .rule {
+      width: 96px;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 32px 0 0;
+    }
+
+    .lead {
+      margin: 32px 0 0;
+      font-size: 24px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+      max-width: 620px;
+    }
+
+    .sublead {
+      margin: 20px 0 0;
+      font-size: 20px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .sublead.strong {
+      color: rgba(255,255,255,0.92);
+    }
+
+    .button-row {
+      display: flex;
+      gap: 16px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      border-radius: 18px;
+      padding: 14px 24px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .btn-light {
+      background: white;
+      color: black;
+    }
+
+    .btn-dark {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: transparent;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: 0 24px 64px rgba(0,0,0,.28);
+    }
+
+    .foundation {
+      background: var(--navy);
+      padding: 32px;
+    }
+
+    .section-label {
+      margin: 0 0 18px;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+    }
+
+    .section-label.dark {
+      color: rgba(0,0,0,.45);
+    }
+
+    .foundation-item {
+      padding: 0 0 16px;
+      margin: 0 0 16px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      font-size: 22px;
+      line-height: 1.5;
+      color: rgba(255,255,255,.92);
+    }
+
+    .foundation-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .features {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      padding-top: 64px;
+      padding-bottom: 80px;
+    }
+
+    .feature-card {
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--panel);
+      padding: 32px;
+    }
+
+    .feature-card h2 {
+      margin-top: 14px;
+      font-size: 30px;
+    }
+
+    .feature-card p:last-child {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 18px;
+      margin-top: 14px;
+    }
+
+    .services-band {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,.45);
+    }
+
+    .services-head {
+      padding-top: 64px;
+      max-width: 760px;
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.1fr 0.9fr;
+      padding: 44px 0 80px;
+    }
+
+    .service-primary {
+      background: #05070a;
+      padding: 36px;
+    }
+
+    .service-secondary {
+      background: var(--light-panel);
+      color: var(--text-dark);
+      padding: 36px;
+    }
+
+    .price {
+      margin-top: 14px;
+      font-size: 24px;
+      color: rgba(255,255,255,.85);
+    }
+
+    .price.dark {
+      color: rgba(0,0,0,.8);
+    }
+
+    .mini-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 30px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 18px;
+      padding: 16px 18px;
+      color: rgba(255,255,255,.84);
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .mini-card.light {
+      border-color: rgba(0,0,0,.1);
+      background: rgba(255,255,255,.6);
+      color: rgba(0,0,0,.78);
+    }
+
+    .edge {
+      display: grid;
+      gap: 32px;
+      grid-template-columns: 0.9fr 1.1fr;
+      padding-top: 64px;
+      padding-bottom: 80px;
+    }
+
+    .edge-copy {
+      margin-top: 18px;
+      font-size: 20px;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .founder-section {
+      border-top: 1px solid var(--border);
+      background: #000;
+    }
+
+    .founder-grid {
+      display: grid;
+      gap: 48px;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      padding-top: 80px;
+      padding-bottom: 96px;
+    }
+
+    .founder-image-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .founder-image {
+      width: 100%;
+      display: block;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 64px rgba(0,0,0,.45);
+    }
+
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background: linear-gradient(to top, rgba(0,0,0,.28), rgba(0,0,0,0));
+      pointer-events: none;
+    }
+
+    .founder-name {
+      margin-top: 12px;
+      font-size: clamp(40px, 4.5vw, 58px);
+    }
+
+    .founder-title {
+      margin-top: 12px;
+      color: rgba(255,255,255,.72);
+      font-size: 22px;
+    }
+
+    .founder-copy {
+      margin-top: 22px;
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(255,255,255,.66);
+    }
+
+    .founder-copy.strong {
+      color: rgba(255,255,255,.90);
+    }
+
+    .contact-section {
+      border-top: 1px solid var(--border);
+      background: #000;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 32px;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: end;
+      padding-top: 64px;
+      padding-bottom: 80px;
+    }
+
+    .contact-card {
+      background: var(--panel);
+      padding: 32px;
+    }
+
+    .contact-line {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(255,255,255,.84);
+      margin: 16px 0 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .features,
+      .services-grid,
+      .edge,
+      .founder-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Career Strategies</p>
+        <h1>Contact Cover</h1>
+        <div class="rule"></div>
+        <p class="lead">Private advisory for high-stakes career decisions.</p>
+        <p class="sublead">Strategic guidance for federal law enforcement, intelligence, and U.S. military careers.</p>
+        <p class="sublead strong">Led by a former <strong>Special Agent</strong> and <strong>Intelligence Officer</strong>.</p>
+        <div class="button-row">
+          <a href="#services" class="btn btn-light">View Services</a>
+          <a href="#contact" class="btn btn-dark">Request Consultation</a>
+        </div>
       </div>
 
+      <div class="card foundation">
+        <p class="section-label">Operational Foundation</p>
+        <div class="foundation-item">Local &amp; Federal Law Enforcement</div>
+        <div class="foundation-item">Special Agent Careers</div>
+        <div class="foundation-item">Intelligence Pathways</div>
+        <div class="foundation-item">U.S. Military Pathways</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<section class="contact-section">
-  <div class="container contact-grid">
-
-    <div>
-      <p class="section-label">Contact</p>
-      <h2>Direct Access</h2>
-      <p class="contact-line">Email: andres@contactcovercs.com</p>
-      <p class="contact-line">Website: contactcovercs.com</p>
+  <section class="container features">
+    <div class="feature-card">
+      <p class="section-label">Mission</p>
+      <h2>Private advisory for serious candidates</h2>
+      <p>Guidance built for candidates pursuing high-trust, highly selective careers where positioning and judgment matter.</p>
     </div>
 
-    <!-- PAYMENT CARD -->
-    <div class="card contact-card">
-      <p class="section-label">Payment</p>
-      <h3>Secure Payment</h3>
+    <div class="feature-card">
+      <p class="section-label">Differentiator</p>
+      <h2>Firsthand perspective</h2>
+      <p>Built on operational experience across federal law enforcement, intelligence, and military environments — not recycled career advice.</p>
+    </div>
 
-      <p class="contact-line">
-        Payments accepted via secure platforms.
-      </p>
+    <div class="feature-card">
+      <p class="section-label">Coverage</p>
+      <h2>Full-spectrum career pathways</h2>
+      <p>Local and federal law enforcement, intelligence pathways, and United States military careers.</p>
+    </div>
+  </section>
 
-      <div style="margin-top:20px;">
-        <a href="https://YOUR-STRIPE-LINK" target="_blank" class="btn btn-light">
-          Pay Now
-        </a>
+  <section id="services" class="services-band">
+    <div class="container">
+      <div class="services-head">
+        <p class="section-label">Services</p>
+        <h2>Focused, high-trust support</h2>
       </div>
 
-      <p style="margin-top:20px; font-size:14px; opacity:.6;">
-        Stripe • PayPal • Zelle available upon request
-      </p>
+      <div class="services-grid">
+        <div class="card service-primary">
+          <p class="section-label">Primary</p>
+          <h3>1:1 Strategy</h3>
+          <p class="price">$200/hr | $275 (90 min)</p>
+          <div class="mini-grid">
+            <div class="mini-card">Resume positioning</div>
+            <div class="mini-card">Agency strategy</div>
+            <div class="mini-card">Interview preparation</div>
+            <div class="mini-card">Background guidance</div>
+          </div>
+        </div>
+
+        <div class="card service-secondary">
+          <p class="section-label dark">Secondary</p>
+          <h3>Retainer Advisory</h3>
+          <p class="price dark">$2,500/month</p>
+          <div class="mini-grid">
+            <div class="mini-card light">Ongoing strategy</div>
+            <div class="mini-card light">Direct access</div>
+            <div class="mini-card light">Full pipeline support</div>
+            <div class="mini-card light">3-month minimum</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container edge">
+    <div>
+      <p class="section-label">Operational Edge</p>
+      <h2>Firsthand strategic perspective</h2>
+      <p class="edge-copy">Advisory informed by the realities of selective hiring systems, mission-driven institutions, and high-consequence decision points.</p>
     </div>
 
-  </div>
-</section>
+    <div class="mini-grid">
+      <div class="mini-card">Understands what agencies value beyond job postings</div>
+      <div class="mini-card">Firsthand experience with hiring pipelines and investigations</div>
+      <div class="mini-card">Insight across law enforcement and intelligence pathways</div>
+      <div class="mini-card">Guidance built for high-stakes career decisions</div>
+    </div>
+  </section>
+
+  <section class="founder-section">
+    <div class="container founder-grid">
+      <div class="founder-image-wrap">
+        <img class="founder-image" src="./andres.jpg" alt="Andres Godoy">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div>
+        <p class="eyebrow">Founder</p>
+        <h2 class="founder-name">Andres Godoy</h2>
+        <p class="founder-title">Former Special Agent &amp; Intelligence Officer</p>
+        <div class="rule"></div>
+        <p class="founder-copy strong">Andres Godoy brings a career defined by operational leadership across federal law enforcement and intelligence environments.</p>
+        <p class="founder-copy">He has led and supported complex investigations, interagency operations, and strategic initiatives across domestic and international contexts.</p>
+        <p class="founder-copy">Contact Cover was built to provide clients with the same level of clarity, positioning, and strategic advantage required to succeed in highly competitive career landscapes.</p>
+
+        <div style="margin-top:30px;">
+          <a href="https://calendly.com/YOUR-LINK" target="_blank" class="btn btn-light">Schedule Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container contact-grid">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2>Direct Access</h2>
+        <p class="contact-line">Email: andres@contactcovercs.com</p>
+        <p class="contact-line">Website: contactcovercs.com</p>
+      </div>
+
+      <div class="card contact-card">
+        <p class="section-label">Payment</p>
+        <h3>Secure Payment</h3>
+        <p class="contact-line">Payments accepted via secure platforms.</p>
+
+        <div style="margin-top:20px;">
+          <a href="https://YOUR-STRIPE-LINK" target="_blank" class="btn btn-light">Pay Now</a>
+        </div>
+
+        <p style="margin-top:20px; font-size:14px; opacity:.6;">Stripe • PayPal • Zelle available upon request</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
