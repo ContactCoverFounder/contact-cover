@@ -5,417 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Cover</title>
   <style>
-    :root {
-      --bg: #050505;
-      --panel: rgba(255,255,255,0.03);
-      --border: rgba(255,255,255,0.10);
-      --muted: rgba(255,255,255,0.70);
-      --soft: rgba(255,255,255,0.45);
-      --navy: #0a1a2f;
-      --light-panel: #e5e7eb;
-      --text-dark: #111111;
-      font-family: Arial, sans-serif;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { margin: 0; background: #000; color: white; }
-    body { background: var(--bg); }
-    a { text-decoration: none; }
-
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .hero {
-      border-bottom: 1px solid var(--border);
-      background: #000;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: end;
-      padding: 80px 0 96px;
-    }
-
-    .eyebrow {
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: .42em;
-      color: var(--soft);
-      font-size: 12px;
-    }
-
-    h1 {
-      margin: 14px 0 0;
-      font-size: clamp(52px, 8vw, 88px);
-      line-height: .95;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(34px, 4vw, 56px);
-      line-height: 1.05;
-    }
-
-    h3 {
-      margin: 0;
-      font-size: 32px;
-      line-height: 1.1;
-    }
-
-    .rule {
-      width: 96px;
-      height: 1px;
-      background: rgba(255,255,255,0.2);
-      margin: 32px 0 0;
-    }
-
-    .lead {
-      margin: 32px 0 0;
-      font-size: 24px;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.85);
-      max-width: 620px;
-    }
-
-    .sublead {
-      margin: 20px 0 0;
-      font-size: 20px;
-      line-height: 1.7;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .sublead.strong {
-      color: rgba(255,255,255,0.92);
-    }
-
-    .button-row {
-      display: flex;
-      gap: 16px;
-      margin-top: 36px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      border-radius: 18px;
-      padding: 14px 24px;
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .btn-light {
-      background: white;
-      color: black;
-    }
-
-    .btn-dark {
-      color: white;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: transparent;
-    }
-
-    .card {
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      box-shadow: 0 24px 64px rgba(0,0,0,.28);
-    }
-
-    .foundation {
-      background: var(--navy);
-      padding: 32px;
-    }
-
-    .section-label {
-      margin: 0 0 18px;
-      text-transform: uppercase;
-      letter-spacing: .22em;
-      color: rgba(255,255,255,.55);
-      font-size: 13px;
-    }
-
-    .section-label.dark {
-      color: rgba(0,0,0,.45);
-    }
-
-    .foundation-item {
-      padding: 0 0 16px;
-      margin: 0 0 16px;
-      border-bottom: 1px solid rgba(255,255,255,.12);
-      font-size: 22px;
-      line-height: 1.5;
-      color: rgba(255,255,255,.92);
-    }
-
-    .foundation-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .features {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: repeat(3, 1fr);
-      padding-top: 64px;
-      padding-bottom: 80px;
-    }
-
-    .feature-card {
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: var(--panel);
-      padding: 32px;
-    }
-
-    .feature-card h2 {
-      margin-top: 14px;
-      font-size: 30px;
-    }
-
-    .feature-card p:last-child {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 18px;
-      margin-top: 14px;
-    }
-
-    .services-band {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: rgba(0,0,0,.45);
-    }
-
-    .services-head {
-      padding-top: 64px;
-      max-width: 760px;
-    }
-
-    .services-grid {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: 1.1fr 0.9fr;
-      padding: 44px 0 80px;
-    }
-
-    .service-primary {
-      background: #05070a;
-      padding: 36px;
-    }
-
-    .service-secondary {
-      background: var(--light-panel);
-      color: var(--text-dark);
-      padding: 36px;
-    }
-
-    .price {
-      margin-top: 14px;
-      font-size: 24px;
-      color: rgba(255,255,255,.85);
-    }
-
-    .price.dark {
-      color: rgba(0,0,0,.8);
-    }
-
-    .mini-grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(2, 1fr);
-      margin-top: 30px;
-    }
-
-    .mini-card {
-      border: 1px solid var(--border);
-      background: var(--panel);
-      border-radius: 18px;
-      padding: 16px 18px;
-      color: rgba(255,255,255,.84);
-      font-size: 18px;
-      line-height: 1.5;
-    }
-
-    .mini-card.light {
-      border-color: rgba(0,0,0,.1);
-      background: rgba(255,255,255,.6);
-      color: rgba(0,0,0,.78);
-    }
-
-    .edge {
-      display: grid;
-      gap: 32px;
-      grid-template-columns: 0.9fr 1.1fr;
-      padding-top: 64px;
-      padding-bottom: 80px;
-    }
-
-    .edge-copy {
-      margin-top: 18px;
-      font-size: 20px;
-      line-height: 1.8;
-      color: var(--muted);
-      max-width: 720px;
-    }
-
-    .founder-section {
-      border-top: 1px solid var(--border);
-      background: #000;
-    }
-
-    .founder-grid {
+.founder-grid {
   display: grid;
   gap: 56px;
   grid-template-columns: minmax(340px, 440px) 1fr;
   align-items: center;
   padding-top: 88px;
-  padding-bottom: 96px;
+  padding-bottom: 84px;
 }
 
-   .founder-image-wrap {
+.founder-image-wrap {
   position: relative;
   width: 100%;
   max-width: 440px;
   aspect-ratio: 4 / 5;
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
-
-  border: 1px solid rgba(255,255,255,0.08); /* subtle */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);  /* softer */
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+  background: #0a0a0a;
 }
-    .founder-image {
+
+.founder-image {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center 15%;
-
-  /* subtle premium look */
-  border-radius: 20px;
+  object-position: center 18%;
 }
 
-    .image-overlay {
-      position: absolute;
-      inset: 0;
-      border-radius: 28px;
-      background: linear-gradient(to top, rgba(0,0,0,.28), rgba(0,0,0,0));
-      pointer-events: none;
-    }
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,0.18), rgba(0,0,0,0.02));
+}
 
-    .founder-name {
-      margin-top: 12px;
-      font-size: clamp(40px, 4.5vw, 58px);
-    }
+.founder-name {
+  margin-top: 10px;
+  font-size: clamp(46px, 5vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
 
-    .founder-title {
-      margin-top: 12px;
-      color: rgba(255,255,255,.72);
-      font-size: 22px;
-    }
+.founder-title {
+  margin-top: 14px;
+  color: rgba(255,255,255,.78);
+  font-size: 22px;
+  line-height: 1.4;
+}
 
-    .founder-copy {
-  margin-top: 18px;
+.founder-copy {
+  margin-top: 22px;
   font-size: 19px;
-  line-height: 1.85;
-  color: rgba(255,255,255,.70);
-  max-width: 760px;
+  line-height: 1.9;
+  color: rgba(255,255,255,.72);
+  max-width: 780px;
 }
 
-    .founder-copy.strong {
-      color: rgba(255,255,255,.90);
-    }
-
-    .contact-section {
-      .contact-section {
-  border-top: none;
+.founder-copy.strong {
+  color: rgba(255,255,255,.90);
 }
 
-    .contact-grid {
+.contact-section {
+  <section id="contact" class="contact-section">
+  <div class="container contact-grid">
+    <div class="contact-panel">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2>Direct Access</h2>
+
+        <div class="contact-meta">
+          <p>Email: andres@contactcovercs.com</p>
+          <p>Website: contactcovercs.com</p>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a href="https://calendly.com/YOUR-LINK" target="_blank" class="btn-dark">Book Consultation</a>
+      </div>
+    </div>
+
+    <div class="payment-panel">
+      <div>
+        <p class="section-label">Payment</p>
+        <h2>Secure Payment</h2>
+        <p class="contact-line">Payments accepted via secure platforms.</p>
+        <p class="payment-note">Stripe • PayPal • Zelle available upon request</p>
+      </div>
+
+      <div class="cta-row">
+        <a href="https://YOUR-STRIPE-LINK" target="_blank" class="btn-light">Pay Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+.contact-grid {
   display: grid;
-  gap: 40px;
+  gap: 28px;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
-  padding-top: 72px;
-  padding-bottom: 96px;
+  padding-top: 34px;
 }
 
-    .contact-card {
-      background: var(--panel);
-      padding: 32px;
-    }
-
-    .contact-line {
-      font-size: 20px;
-      line-height: 1.8;
-      color: rgba(255,255,255,.84);
-      margin: 16px 0 0;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .features,
-      .services-grid,
-      .edge,
-      .founder-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .mini-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .contact-panel,
+.contact-panel,
 .payment-panel {
   border-radius: 28px;
   background: linear-gradient(
     180deg,
-    rgba(255,255,255,0.04) 0%,
+    rgba(255,255,255,0.035) 0%,
     rgba(255,255,255,0.02) 100%
   );
-
   border: 1px solid rgba(255,255,255,0.06);
-  padding: 40px;
-  min-height: 320px;
-
+  padding: 36px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  /* THIS is the key upgrade */
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
   backdrop-filter: blur(6px);
 }
 
+.section-label {
+  font-size: 12px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.48);
+  margin: 0 0 16px;
+}
+
+.contact-panel h2,
+.payment-panel h2 {
+  font-size: 34px;
+  line-height: 1.05;
+  margin: 0 0 18px;
+}
+
 .contact-meta {
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .contact-meta p {
   margin: 0 0 16px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.8;
-  color: rgba(255,255,255,.84);
+  color: rgba(255,255,255,.80);
+}
+
+.contact-line {
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.80);
 }
 
 .payment-note {
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 14px;
   line-height: 1.7;
-  color: rgba(255,255,255,.58);
+  color: rgba(255,255,255,.56);
 }
 
 .cta-row {
   margin-top: 28px;
+}
+
+.btn-light {
+  display: inline-block;
+  background: #f3f1ee;
+  color: #111;
+  border-radius: 999px;
+  padding: 15px 28px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  border: none;
+}
+
+.btn-dark {
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border-radius: 999px;
+  padding: 15px 28px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.10);
 }
 
 @media (max-width: 900px) {
