@@ -1,327 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Cover</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Cover</title>
+
+<style>
+:root {
+  --bg: #000;
+  --text: #fff;
+  --muted: rgba(255,255,255,0.65);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- FOUNDER ---------- */
+
+.founder-section {
+  padding: 100px 0 60px;
+}
+
 .founder-grid {
   display: grid;
-  gap: 56px;
-  grid-template-columns: minmax(340px, 440px) 1fr;
+  grid-template-columns: 420px 1fr;
+  gap: 60px;
   align-items: center;
-  padding-top: 88px;
-  padding-bottom: 84px;
 }
 
 .founder-image-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 440px;
-  aspect-ratio: 4 / 5;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.5);
-  background: #0a0a0a;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 .founder-image {
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
-  object-position: center 18%;
 }
 
-.image-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(to top, rgba(0,0,0,0.18), rgba(0,0,0,0.02));
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .founder-name {
-  margin-top: 10px;
-  font-size: clamp(46px, 5vw, 72px);
-  line-height: 0.98;
-  letter-spacing: -0.03em;
+  font-size: 64px;
+  margin: 10px 0;
+  letter-spacing: -0.02em;
 }
 
 .founder-title {
-  margin-top: 14px;
-  color: rgba(255,255,255,.78);
-  font-size: 22px;
-  line-height: 1.4;
+  font-size: 20px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.rule {
+  width: 60px;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 20px 0;
 }
 
 .founder-copy {
-  margin-top: 22px;
-  font-size: 19px;
-  line-height: 1.9;
-  color: rgba(255,255,255,.72);
-  max-width: 780px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 18px;
 }
 
 .founder-copy.strong {
-  color: rgba(255,255,255,.90);
+  color: white;
 }
 
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn-light {
+  background: white;
+  color: black;
+}
+
+/* ---------- CONTACT + PAYMENT ---------- */
+
 .contact-section {
-  <section id="contact" class="contact-section">
-  <div class="container contact-grid">
-    <div class="contact-panel">
-      <div>
-        <p class="section-label">Contact</p>
-        <h2>Direct Access</h2>
-
-        <div class="contact-meta">
-          <p>Email: andres@contactcovercs.com</p>
-          <p>Website: contactcovercs.com</p>
-        </div>
-      </div>
-
-      <div class="cta-row">
-        <a href="https://calendly.com/YOUR-LINK" target="_blank" class="btn-dark">Book Consultation</a>
-      </div>
-    </div>
-
-    <div class="payment-panel">
-      <div>
-        <p class="section-label">Payment</p>
-        <h2>Secure Payment</h2>
-        <p class="contact-line">Payments accepted via secure platforms.</p>
-        <p class="payment-note">Stripe • PayPal • Zelle available upon request</p>
-      </div>
-
-      <div class="cta-row">
-        <a href="https://YOUR-STRIPE-LINK" target="_blank" class="btn-light">Pay Now</a>
-      </div>
-    </div>
-  </div>
-</section>
+  padding: 40px 0 100px;
+}
 
 .contact-grid {
   display: grid;
-  gap: 28px;
   grid-template-columns: 1fr 1fr;
-  align-items: stretch;
-  padding-top: 34px;
+  gap: 30px;
 }
 
-.contact-panel,
-.payment-panel {
+.panel {
   border-radius: 28px;
+  padding: 36px;
+  border: 1px solid rgba(255,255,255,0.08);
   background: linear-gradient(
     180deg,
-    rgba(255,255,255,0.035) 0%,
-    rgba(255,255,255,0.02) 100%
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.02)
   );
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 36px;
-  min-height: 250px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
 }
 
 .section-label {
   font-size: 12px;
-  letter-spacing: .28em;
+  letter-spacing: .25em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.48);
-  margin: 0 0 16px;
+  color: var(--muted);
+  margin-bottom: 12px;
 }
 
-.contact-panel h2,
-.payment-panel h2 {
-  font-size: 34px;
-  line-height: 1.05;
-  margin: 0 0 18px;
-}
-
-.contact-meta {
-  margin-top: 22px;
+.panel h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
 }
 
 .contact-meta p {
-  margin: 0 0 16px;
+  margin: 8px 0;
   font-size: 18px;
-  line-height: 1.8;
-  color: rgba(255,255,255,.80);
-}
-
-.contact-line {
-  margin-top: 12px;
-  font-size: 18px;
-  line-height: 1.8;
-  color: rgba(255,255,255,.80);
+  color: rgba(255,255,255,0.8);
 }
 
 .payment-note {
-  margin-top: 18px;
   font-size: 14px;
-  line-height: 1.7;
-  color: rgba(255,255,255,.56);
-}
-
-.cta-row {
-  margin-top: 28px;
-}
-
-.btn-light {
-  display: inline-block;
-  background: #f3f1ee;
-  color: #111;
-  border-radius: 999px;
-  padding: 15px 28px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  border: none;
+  color: rgba(255,255,255,0.5);
+  margin-top: 10px;
 }
 
 .btn-dark {
-  display: inline-block;
   background: rgba(255,255,255,0.08);
   color: white;
-  border-radius: 999px;
-  padding: 15px 28px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
+/* ---------- MOBILE ---------- */
+
 @media (max-width: 900px) {
-  .founder-grid,
+  .founder-grid {
+    grid-template-columns: 1fr;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
-  .founder-image-wrap {
-    max-width: 100%;
-  }
-
-  .contact-panel,
-  .payment-panel {
-    min-height: auto;
+  .founder-name {
+    font-size: 42px;
   }
 }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">Career Strategies</p>
-        <h1>Contact Cover</h1>
-        <div class="rule"></div>
-        <p class="lead">Private advisory for high-stakes career decisions.</p>
-        <p class="sublead">Strategic guidance for federal law enforcement, intelligence, and U.S. military careers.</p>
-        <p class="sublead strong">Led by a former <strong>Special Agent</strong> and <strong>Intelligence Officer</strong>.</p>
-        <div class="button-row">
-          <a href="#services" class="btn btn-light">View Services</a>
-          <a href="#contact" class="btn btn-dark">Request Consultation</a>
-        </div>
-      </div>
-
-      <div class="card foundation">
-        <p class="section-label">Operational Foundation</p>
-        <div class="foundation-item">Local &amp; Federal Law Enforcement</div>
-        <div class="foundation-item">Special Agent Careers</div>
-        <div class="foundation-item">Intelligence Pathways</div>
-        <div class="foundation-item">U.S. Military Pathways</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container features">
-    <div class="feature-card">
-      <p class="section-label">Mission</p>
-      <h2>Private advisory for serious candidates</h2>
-      <p>Guidance built for candidates pursuing high-trust, highly selective careers where positioning and judgment matter.</p>
-    </div>
-
-    <div class="feature-card">
-      <p class="section-label">Differentiator</p>
-      <h2>Firsthand perspective</h2>
-      <p>Built on operational experience across federal law enforcement, intelligence, and military environments — not recycled career advice.</p>
-    </div>
-
-    <div class="feature-card">
-      <p class="section-label">Coverage</p>
-      <h2>Full-spectrum career pathways</h2>
-      <p>Local and federal law enforcement, intelligence pathways, and United States military careers.</p>
-    </div>
-  </section>
-
-  <section id="services" class="services-band">
-    <div class="container">
-      <div class="services-head">
-        <p class="section-label">Services</p>
-        <h2>Focused, high-trust support</h2>
-      </div>
-
-      <div class="services-grid">
-        <div class="card service-primary">
-          <p class="section-label">Primary</p>
-          <h3>1:1 Strategy</h3>
-          <p class="price">$200/hr | $275 (90 min)</p>
-          <div class="mini-grid">
-            <div class="mini-card">Resume positioning</div>
-            <div class="mini-card">Agency strategy</div>
-            <div class="mini-card">Interview preparation</div>
-            <div class="mini-card">Background guidance</div>
-          </div>
-        </div>
-
-        <div class="card service-secondary">
-          <p class="section-label dark">Secondary</p>
-          <h3>Retainer Advisory</h3>
-          <p class="price dark">$2,500/month</p>
-          <div class="mini-grid">
-            <div class="mini-card light">Ongoing strategy</div>
-            <div class="mini-card light">Direct access</div>
-            <div class="mini-card light">Full pipeline support</div>
-            <div class="mini-card light">3-month minimum</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container edge">
-    <div>
-      <p class="section-label">Operational Edge</p>
-      <h2>Firsthand strategic perspective</h2>
-      <p class="edge-copy">Advisory informed by the realities of selective hiring systems, mission-driven institutions, and high-consequence decision points.</p>
-    </div>
-
-    <div class="mini-grid">
-      <div class="mini-card">Understands what agencies value beyond job postings</div>
-      <div class="mini-card">Firsthand experience with hiring pipelines and investigations</div>
-      <div class="mini-card">Insight across law enforcement and intelligence pathways</div>
-      <div class="mini-card">Guidance built for high-stakes career decisions</div>
-    </div>
-  </section>
-
-  <section class="founder-section">
+<!-- FOUNDER -->
+<section class="founder-section">
   <div class="container founder-grid">
+
     <div class="founder-image-wrap">
-      <img class="founder-image" src="./founder-elite.png" alt="Andres Godoy">
-      <div class="image-overlay"></div>
+      <img src="./founder-elite.png" class="founder-image">
     </div>
 
     <div>
       <p class="eyebrow">Founder</p>
       <h2 class="founder-name">Andres Godoy</h2>
-      <p class="founder-title">Former Special Agent &amp; Intelligence Officer</p>
+      <p class="founder-title">Former Special Agent & Intelligence Officer</p>
+
       <div class="rule"></div>
 
       <p class="founder-copy strong">
@@ -336,10 +208,47 @@
         Contact Cover was built to provide clients with the same level of clarity, positioning, and strategic advantage required to succeed in highly competitive career landscapes.
       </p>
 
-      <div class="cta-row">
-        <a href="https://calendly.com/YOUR-LINK" target="_blank" class="btn btn-light">Schedule Consultation</a>
-      </div>
+      <a href="https://calendly.com/YOUR-LINK" class="btn btn-light" target="_blank">
+        Schedule Consultation
+      </a>
     </div>
+
+  </div>
+</section>
+
+<!-- CONTACT + PAYMENT -->
+<section class="contact-section">
+  <div class="container contact-grid">
+
+    <div class="panel">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2>Direct Access</h2>
+
+        <div class="contact-meta">
+          <p>Email: andres@contactcovercs.com</p>
+          <p>Website: contactcovercs.com</p>
+        </div>
+      </div>
+
+      <a href="https://calendly.com/YOUR-LINK" class="btn btn-dark" target="_blank">
+        Book Consultation
+      </a>
+    </div>
+
+    <div class="panel">
+      <div>
+        <p class="section-label">Payment</p>
+        <h2>Secure Payment</h2>
+        <p class="founder-copy">Payments accepted via secure platforms.</p>
+        <p class="payment-note">Stripe • PayPal • Zelle available upon request</p>
+      </div>
+
+      <a href="https://YOUR-STRIPE-LINK" class="btn btn-light" target="_blank">
+        Pay Now
+      </a>
+    </div>
+
   </div>
 </section>
 
