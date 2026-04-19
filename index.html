@@ -273,27 +273,33 @@
     }
 
     .founder-grid {
-      display: grid;
-      gap: 48px;
-      grid-template-columns: 0.9fr 1.1fr;
-      align-items: center;
-      padding-top: 80px;
-      padding-bottom: 96px;
-    }
+  display: grid;
+  gap: 56px;
+  grid-template-columns: minmax(340px, 440px) 1fr;
+  align-items: center;
+  padding-top: 88px;
+  padding-bottom: 96px;
+}
 
     .founder-image-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 420px;
-    }
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 64px rgba(0,0,0,.45);
+  background: #0b0b0b;
+}
 
     .founder-image {
-      width: 100%;
-      display: block;
-      border-radius: 28px;
-      border: 1px solid var(--border);
-      box-shadow: 0 24px 64px rgba(0,0,0,.45);
-    }
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 20%;
+}
 
     .image-overlay {
       position: absolute;
@@ -315,11 +321,12 @@
     }
 
     .founder-copy {
-      margin-top: 22px;
-      font-size: 20px;
-      line-height: 1.8;
-      color: rgba(255,255,255,.66);
-    }
+  margin-top: 18px;
+  font-size: 19px;
+  line-height: 1.85;
+  color: rgba(255,255,255,.70);
+  max-width: 760px;
+}
 
     .founder-copy.strong {
       color: rgba(255,255,255,.90);
@@ -331,13 +338,13 @@
     }
 
     .contact-grid {
-      display: grid;
-      gap: 32px;
-      grid-template-columns: 1.05fr 0.95fr;
-      align-items: end;
-      padding-top: 64px;
-      padding-bottom: 80px;
-    }
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  padding-top: 72px;
+  padding-bottom: 96px;
+}
 
     .contact-card {
       background: var(--panel);
@@ -365,6 +372,55 @@
         grid-template-columns: 1fr;
       }
     }
+    .contact-panel,
+.payment-panel {
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: rgba(255,255,255,0.03);
+  padding: 36px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-meta {
+  margin-top: 28px;
+}
+
+.contact-meta p {
+  margin: 0 0 16px;
+  font-size: 20px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.84);
+}
+
+.payment-note {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.58);
+}
+
+.cta-row {
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .founder-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-image-wrap {
+    max-width: 100%;
+  }
+
+  .contact-panel,
+  .payment-panel {
+    min-height: auto;
+  }
+}
   </style>
 </head>
 <body>
@@ -465,50 +521,36 @@
   </section>
 
   <section class="founder-section">
-    <div class="container founder-grid">
-      <div class="founder-image-wrap">
-        <img class="founder-image" src="./founder-elite.png" alt="Andres Godoy">
-        <div class="image-overlay"></div>
-      </div>
+  <div class="container founder-grid">
+    <div class="founder-image-wrap">
+      <img class="founder-image" src="./founder-elite.png" alt="Andres Godoy">
+      <div class="image-overlay"></div>
+    </div>
 
-      <div>
-        <p class="eyebrow">Founder</p>
-        <h2 class="founder-name">Andres Godoy</h2>
-        <p class="founder-title">Former Special Agent &amp; Intelligence Officer</p>
-        <div class="rule"></div>
-        <p class="founder-copy strong">Andres Godoy brings a career defined by operational leadership across federal law enforcement and intelligence environments.</p>
-        <p class="founder-copy">He has led and supported complex investigations, interagency operations, and strategic initiatives across domestic and international contexts.</p>
-        <p class="founder-copy">Contact Cover was built to provide clients with the same level of clarity, positioning, and strategic advantage required to succeed in highly competitive career landscapes.</p>
+    <div>
+      <p class="eyebrow">Founder</p>
+      <h2 class="founder-name">Andres Godoy</h2>
+      <p class="founder-title">Former Special Agent &amp; Intelligence Officer</p>
+      <div class="rule"></div>
 
-        <div style="margin-top:30px;">
-          <a href="https://calendly.com/YOUR-LINK" target="_blank" class="btn btn-light">Schedule Consultation</a>
-        </div>
+      <p class="founder-copy strong">
+        Andres Godoy brings a career defined by operational leadership across federal law enforcement and intelligence environments.
+      </p>
+
+      <p class="founder-copy">
+        He has led and supported complex investigations, interagency operations, and strategic initiatives across domestic and international contexts.
+      </p>
+
+      <p class="founder-copy">
+        Contact Cover was built to provide clients with the same level of clarity, positioning, and strategic advantage required to succeed in highly competitive career landscapes.
+      </p>
+
+      <div class="cta-row">
+        <a href="https://calendly.com/YOUR-LINK" target="_blank" class="btn btn-light">Schedule Consultation</a>
       </div>
     </div>
-  </section>
-
-  <section id="contact" class="contact-section">
-    <div class="container contact-grid">
-      <div>
-        <p class="section-label">Contact</p>
-        <h2>Direct Access</h2>
-        <p class="contact-line">Email: andres@contactcovercs.com</p>
-        <p class="contact-line">Website: contactcovercs.com</p>
-      </div>
-
-      <div class="card contact-card">
-        <p class="section-label">Payment</p>
-        <h3>Secure Payment</h3>
-        <p class="contact-line">Payments accepted via secure platforms.</p>
-
-        <div style="margin-top:20px;">
-          <a href="https://YOUR-STRIPE-LINK" target="_blank" class="btn btn-light">Pay Now</a>
-        </div>
-
-        <p style="margin-top:20px; font-size:14px; opacity:.6;">Stripe • PayPal • Zelle available upon request</p>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 </body>
 </html>
