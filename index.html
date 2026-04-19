@@ -6,16 +6,10 @@
 <title>Contact Cover</title>
 
 <style>
-:root {
-  --bg: #000;
-  --text: #fff;
-  --muted: rgba(255,255,255,0.65);
-}
-
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+  background: #000;
+  color: #fff;
   font-family: Inter, Arial, sans-serif;
 }
 
@@ -25,10 +19,25 @@ body {
   padding: 0 24px;
 }
 
+/* ---------- SERVICES ---------- */
+
+.services-section {
+  padding: 100px 0;
+}
+
+.services-section h2 {
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  margin: 6px 0;
+  color: rgba(255,255,255,0.8);
+}
+
 /* ---------- FOUNDER ---------- */
 
 .founder-section {
-  padding: 100px 0 60px;
+  padding: 80px 0;
 }
 
 .founder-grid {
@@ -41,32 +50,28 @@ body {
 .founder-image-wrap {
   border-radius: 24px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 .founder-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
 }
 
 .eyebrow {
   font-size: 12px;
   letter-spacing: .25em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(255,255,255,0.5);
 }
 
 .founder-name {
   font-size: 64px;
   margin: 10px 0;
-  letter-spacing: -0.02em;
 }
 
 .founder-title {
   font-size: 20px;
-  color: var(--muted);
+  color: rgba(255,255,255,0.6);
   margin-bottom: 20px;
 }
 
@@ -81,11 +86,7 @@ body {
   font-size: 18px;
   line-height: 1.8;
   color: rgba(255,255,255,0.75);
-  margin-bottom: 18px;
-}
-
-.founder-copy.strong {
-  color: white;
+  margin-bottom: 16px;
 }
 
 .btn {
@@ -103,10 +104,10 @@ body {
   color: black;
 }
 
-/* ---------- CONTACT + PAYMENT ---------- */
+/* ---------- CONTACT ---------- */
 
 .contact-section {
-  padding: 40px 0 100px;
+  padding: 80px 0 120px;
 }
 
 .contact-grid {
@@ -116,49 +117,40 @@ body {
 }
 
 .panel {
-  border-radius: 28px;
+  border-radius: 24px;
   padding: 36px;
   border: 1px solid rgba(255,255,255,0.08);
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.04),
-    rgba(255,255,255,0.02)
-  );
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background: rgba(255,255,255,0.03);
 }
 
 .section-label {
   font-size: 12px;
   letter-spacing: .25em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 12px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 10px;
 }
 
 .panel h2 {
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 16px;
 }
 
-.contact-meta p {
+.panel p {
   margin: 8px 0;
-  font-size: 18px;
-  color: rgba(255,255,255,0.8);
-}
-
-.payment-note {
-  font-size: 14px;
-  color: rgba(255,255,255,0.5);
-  margin-top: 10px;
+  color: rgba(255,255,255,0.75);
 }
 
 .btn-dark {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 999px;
   background: rgba(255,255,255,0.08);
   color: white;
-  border: 1px solid rgba(255,255,255,0.1);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: .15em;
 }
 
 /* ---------- MOBILE ---------- */
@@ -181,6 +173,45 @@ body {
 
 <body>
 
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="container">
+
+    <h2 style="font-size:36px;">Strategy</h2>
+    <p>$200/hr | $275 (90 min)</p>
+
+    <p>Resume positioning</p>
+    <p>Agency strategy</p>
+    <p>Interview preparation</p>
+    <p>Background guidance</p>
+
+    <div style="height:40px;"></div>
+
+    <h2 style="font-size:28px;">Retainer Advisory</h2>
+    <p>$2,500/month</p>
+
+    <p>Ongoing strategy</p>
+    <p>Direct access</p>
+    <p>Full pipeline support</p>
+    <p>3-month minimum</p>
+
+    <div style="height:60px;"></div>
+
+    <h2 style="font-size:34px;">Firsthand strategic perspective</h2>
+    <p style="max-width:700px;">
+      Advisory informed by the realities of selective hiring systems, mission-driven institutions, and high-consequence decision points.
+    </p>
+
+    <div style="margin-top:20px;">
+      <p>Understands what agencies value beyond job postings</p>
+      <p>Firsthand experience with hiring pipelines and investigations</p>
+      <p>Insight across law enforcement and intelligence pathways</p>
+      <p>Guidance built for high-stakes career decisions</p>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOUNDER -->
 <section class="founder-section">
   <div class="container founder-grid">
@@ -196,7 +227,7 @@ body {
 
       <div class="rule"></div>
 
-      <p class="founder-copy strong">
+      <p class="founder-copy">
         Andres Godoy brings a career defined by operational leadership across federal law enforcement and intelligence environments.
       </p>
 
@@ -208,7 +239,7 @@ body {
         Contact Cover was built to provide clients with the same level of clarity, positioning, and strategic advantage required to succeed in highly competitive career landscapes.
       </p>
 
-      <a href="https://calendly.com/YOUR-LINK" class="btn btn-light" target="_blank">
+      <a href="https://calendly.com/YOUR-LINK" class="btn btn-light">
         Schedule Consultation
       </a>
     </div>
@@ -221,30 +252,27 @@ body {
   <div class="container contact-grid">
 
     <div class="panel">
-      <div>
-        <p class="section-label">Contact</p>
-        <h2>Direct Access</h2>
+      <p class="section-label">Contact</p>
+      <h2>Direct Access</h2>
 
-        <div class="contact-meta">
-          <p>Email: andres@contactcovercs.com</p>
-          <p>Website: contactcovercs.com</p>
-        </div>
-      </div>
+      <p>Email: andres@contactcovercs.com</p>
+      <p>Website: contactcovercs.com</p>
 
-      <a href="https://calendly.com/YOUR-LINK" class="btn btn-dark" target="_blank">
+      <a href="https://calendly.com/YOUR-LINK" class="btn-dark">
         Book Consultation
       </a>
     </div>
 
     <div class="panel">
-      <div>
-        <p class="section-label">Payment</p>
-        <h2>Secure Payment</h2>
-        <p class="founder-copy">Payments accepted via secure platforms.</p>
-        <p class="payment-note">Stripe • PayPal • Zelle available upon request</p>
-      </div>
+      <p class="section-label">Payment</p>
+      <h2>Secure Payment</h2>
 
-      <a href="https://YOUR-STRIPE-LINK" class="btn btn-light" target="_blank">
+      <p>Payments accepted via secure platforms.</p>
+      <p style="font-size:14px; opacity:0.6;">
+        Stripe • PayPal • Zelle available upon request
+      </p>
+
+      <a href="https://YOUR-STRIPE-LINK" class="btn-light" style="margin-top:20px;">
         Pay Now
       </a>
     </div>
