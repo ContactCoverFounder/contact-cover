@@ -335,9 +335,9 @@
     }
 
     .contact-section {
-      border-top: 1px solid var(--border);
-      background: #000;
-    }
+      .contact-section {
+  border-top: none;
+}
 
     .contact-grid {
   display: grid;
@@ -376,14 +376,24 @@
     }
     .contact-panel,
 .payment-panel {
-  border: 1px solid var(--border);
   border-radius: 28px;
-  background: rgba(255,255,255,0.03);
-  padding: 36px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04) 0%,
+    rgba(255,255,255,0.02) 100%
+  );
+
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 40px;
   min-height: 320px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  /* THIS is the key upgrade */
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
 }
 
 .contact-meta {
