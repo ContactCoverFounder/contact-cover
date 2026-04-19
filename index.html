@@ -3,282 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Contact Cover</title>
 
 <style>
 body {
   margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: Inter, Arial, sans-serif;
+  background: #050505;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  margin: auto;
+  padding: 80px 24px;
+}
+
+/* ---------- HERO / FOUNDER ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.eyebrow {
+  letter-spacing: .2em;
+  font-size: 11px;
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 68px;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.hero h2 {
+  font-size: 20px;
+  opacity: 0.6;
+  margin: 10px 0 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.75;
+}
+
+.cta {
+  margin-top: 30px;
+}
+
+.cta a {
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: white;
+  color: black;
+  font-size: 12px;
+  letter-spacing: .15em;
+  text-decoration: none;
 }
 
 /* ---------- SERVICES ---------- */
 
-.services-section {
-  padding: 100px 0;
+.services {
+  margin-top: 100px;
 }
 
-.services-section h2 {
+.services h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.card {
+  padding: 40px;
+  border-radius: 20px;
+  background: #0a0a0a;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card h3 {
+  font-size: 26px;
   margin-bottom: 10px;
 }
 
-.services-section p {
-  margin: 6px 0;
-  color: rgba(255,255,255,0.8);
-}
-
-/* ---------- FOUNDER ---------- */
-
-.founder-section {
-  padding: 80px 0;
-}
-
-.founder-grid {
-  display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.founder-image-wrap {
-  border-radius: 24px;
-  overflow: hidden;
-}
-
-.founder-image {
-  width: 100%;
-  display: block;
-}
-
-.eyebrow {
-  font-size: 12px;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-}
-
-.founder-name {
-  font-size: 64px;
-  margin: 10px 0;
-}
-
-.founder-title {
-  font-size: 20px;
-  color: rgba(255,255,255,0.6);
+.price {
+  opacity: 0.6;
   margin-bottom: 20px;
 }
 
-.rule {
-  width: 60px;
-  height: 1px;
-  background: rgba(255,255,255,0.2);
-  margin: 20px 0;
+.card p {
+  opacity: 0.8;
+  margin: 6px 0;
 }
 
-.founder-copy {
-  font-size: 18px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 16px;
+/* ---------- AUTHORITY ---------- */
+
+.authority {
+  margin-top: 100px;
+  max-width: 800px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  font-weight: 600;
+.authority h2 {
+  font-size: 36px;
 }
 
-.btn-light {
-  background: white;
-  color: black;
+.authority p {
+  margin-top: 16px;
+  opacity: 0.75;
+  line-height: 1.7;
 }
 
 /* ---------- CONTACT ---------- */
 
-.contact-section {
-  padding: 80px 0 120px;
-}
-
-.contact-grid {
+.contact {
+  margin-top: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
 .panel {
-  border-radius: 24px;
-  padding: 36px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.03);
+  padding: 40px;
+  border-radius: 20px;
+  background: #0a0a0a;
 }
 
-.section-label {
-  font-size: 12px;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 10px;
-}
-
-.panel h2 {
-  font-size: 28px;
-  margin-bottom: 16px;
+.panel h3 {
+  font-size: 24px;
 }
 
 .panel p {
-  margin: 8px 0;
-  color: rgba(255,255,255,0.75);
+  opacity: 0.7;
 }
 
-.btn-dark {
+.panel a {
   display: inline-block;
   margin-top: 20px;
-  padding: 14px 28px;
+  padding: 12px 24px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  color: white;
-  text-transform: uppercase;
+  background: white;
+  color: black;
+  text-decoration: none;
   font-size: 12px;
   letter-spacing: .15em;
 }
 
 /* ---------- MOBILE ---------- */
 
-@media (max-width: 900px) {
-  .founder-grid {
+@media(max-width: 900px) {
+  .hero {
     grid-template-columns: 1fr;
   }
 
-  .contact-grid {
+  .cards {
     grid-template-columns: 1fr;
   }
 
-  .founder-name {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
     font-size: 42px;
   }
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- SERVICES -->
-<section class="services-section">
-  <div class="container">
+<div class="container">
 
-    <h2 style="font-size:36px;">Strategy</h2>
-    <p>$200/hr | $275 (90 min)</p>
+<!-- HERO -->
+<div class="hero">
+  <img src="./founder-elite.png">
 
-    <p>Resume positioning</p>
-    <p>Agency strategy</p>
-    <p>Interview preparation</p>
-    <p>Background guidance</p>
+  <div>
+    <div class="eyebrow">FOUNDER</div>
+    <h1>Andres Godoy</h1>
+    <h2>Former Special Agent & Intelligence Officer</h2>
 
-    <div style="height:40px;"></div>
-
-    <h2 style="font-size:28px;">Retainer Advisory</h2>
-    <p>$2,500/month</p>
-
-    <p>Ongoing strategy</p>
-    <p>Direct access</p>
-    <p>Full pipeline support</p>
-    <p>3-month minimum</p>
-
-    <div style="height:60px;"></div>
-
-    <h2 style="font-size:34px;">Firsthand strategic perspective</h2>
-    <p style="max-width:700px;">
-      Advisory informed by the realities of selective hiring systems, mission-driven institutions, and high-consequence decision points.
+    <p>
+      Andres Godoy brings a career defined by operational leadership across federal law enforcement and intelligence environments.
     </p>
 
-    <div style="margin-top:20px;">
-      <p>Understands what agencies value beyond job postings</p>
-      <p>Firsthand experience with hiring pipelines and investigations</p>
-      <p>Insight across law enforcement and intelligence pathways</p>
-      <p>Guidance built for high-stakes career decisions</p>
+    <p>
+      He has led and supported complex investigations, interagency operations, and strategic initiatives across domestic and international contexts.
+    </p>
+
+    <div class="cta">
+      <a href="https://calendly.com/YOUR-LINK">SCHEDULE CONSULTATION</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="services">
+  <h2>Advisory Services</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Strategy Session</h3>
+      <div class="price">$200/hr | $275 (90 min)</div>
+
+      <p>Resume positioning</p>
+      <p>Agency strategy</p>
+      <p>Interview preparation</p>
+      <p>Background guidance</p>
+    </div>
+
+    <div class="card">
+      <h3>Retainer Advisory</h3>
+      <div class="price">$2,500/month</div>
+
+      <p>Ongoing strategy</p>
+      <p>Direct access</p>
+      <p>Full pipeline support</p>
+      <p>3-month minimum</p>
     </div>
 
   </div>
-</section>
+</div>
 
-<!-- FOUNDER -->
-<section class="founder-section">
-  <div class="container founder-grid">
+<!-- AUTHORITY -->
+<div class="authority">
+  <h2>Firsthand Strategic Perspective</h2>
 
-    <div class="founder-image-wrap">
-      <img src="./founder-elite.png" class="founder-image">
-    </div>
+  <p>
+    Advisory informed by the realities of selective hiring systems, mission-driven institutions, and high-consequence decision points.
+  </p>
 
-    <div>
-      <p class="eyebrow">Founder</p>
-      <h2 class="founder-name">Andres Godoy</h2>
-      <p class="founder-title">Former Special Agent & Intelligence Officer</p>
+  <p>
+    Understands what agencies value beyond job postings. Firsthand experience with hiring pipelines and investigations across law enforcement and intelligence pathways.
+  </p>
+</div>
 
-      <div class="rule"></div>
+<!-- CONTACT -->
+<div class="contact">
 
-      <p class="founder-copy">
-        Andres Godoy brings a career defined by operational leadership across federal law enforcement and intelligence environments.
-      </p>
+  <div class="panel">
+    <h3>Direct Access</h3>
+    <p>Email: andres@contactcovercs.com</p>
+    <p>Website: contactcovercs.com</p>
 
-      <p class="founder-copy">
-        He has led and supported complex investigations, interagency operations, and strategic initiatives across domestic and international contexts.
-      </p>
-
-      <p class="founder-copy">
-        Contact Cover was built to provide clients with the same level of clarity, positioning, and strategic advantage required to succeed in highly competitive career landscapes.
-      </p>
-
-      <a href="https://calendly.com/YOUR-LINK" class="btn btn-light">
-        Schedule Consultation
-      </a>
-    </div>
-
+    <a href="https://calendly.com/YOUR-LINK">BOOK CONSULTATION</a>
   </div>
-</section>
 
-<!-- CONTACT + PAYMENT -->
-<section class="contact-section">
-  <div class="container contact-grid">
+  <div class="panel">
+    <h3>Secure Payment</h3>
+    <p>Stripe • PayPal • Zelle</p>
 
-    <div class="panel">
-      <p class="section-label">Contact</p>
-      <h2>Direct Access</h2>
-
-      <p>Email: andres@contactcovercs.com</p>
-      <p>Website: contactcovercs.com</p>
-
-      <a href="https://calendly.com/YOUR-LINK" class="btn-dark">
-        Book Consultation
-      </a>
-    </div>
-
-    <div class="panel">
-      <p class="section-label">Payment</p>
-      <h2>Secure Payment</h2>
-
-      <p>Payments accepted via secure platforms.</p>
-      <p style="font-size:14px; opacity:0.6;">
-        Stripe • PayPal • Zelle available upon request
-      </p>
-
-      <a href="https://YOUR-STRIPE-LINK" class="btn-light" style="margin-top:20px;">
-        Pay Now
-      </a>
-    </div>
-
+    <a href="https://YOUR-STRIPE-LINK">PAY NOW</a>
   </div>
-</section>
+
+</div>
+
+</div>
 
 </body>
 </html>
