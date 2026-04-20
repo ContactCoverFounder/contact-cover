@@ -8,29 +8,31 @@
     :root {
       --bg: #050505;
       --panel: rgba(255,255,255,0.03);
-      --border: rgba(255,255,255,0.10);
+      --border: rgba(255,255,255,0.08);
       --muted: rgba(255,255,255,0.68);
       --soft: rgba(255,255,255,0.45);
       --navy: #0a1a2f;
       --light-panel: #e5e7eb;
       --text-dark: #111111;
-      font-family: Inter, Arial, sans-serif;
     }
 
     * { box-sizing: border-box; }
+
     html, body {
       margin: 0;
+      padding: 0;
       background: #000;
-      color: white;
+      color: #fff;
+      font-family: Inter, Arial, sans-serif;
     }
 
     body {
       background: var(--bg);
-      font-family: Inter, Arial, sans-serif;
     }
 
     a {
       text-decoration: none;
+      color: inherit;
     }
 
     .container {
@@ -292,42 +294,18 @@
       padding-bottom: 72px;
     }
 
-    .founder-image-wrap {
-  width: 100%;
-  max-width: 440px;
-
-  /* 🔥 REMOVE CROPPING */
-  aspect-ratio: auto;
-  height: auto;
-
-  border-radius: 16px;
-  overflow: hidden;
-
-  border: none;
-  box-shadow: none;
-}
-
-     .founder-image {
-  width: 100%;
-  height: auto; /* 🔥 THIS IS KEY */
-
-  display: block;
-
-  /* ❌ REMOVE CROPPING */
-  object-fit: contain;
-  object-position: center;
-
-  border: none;
-  box-shadow: none;
-  background: transparent;
-}
-
-    .image-overlay {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(to top, rgba(0,0,0,0.10), rgba(0,0,0,0.02));
-      border-radius: 24px;
+    .founder-image {
+      width: 100%;
+      max-width: 440px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
+      border-radius: 0;
     }
 
     .founder-name {
@@ -437,7 +415,7 @@
         grid-template-columns: 1fr;
       }
 
-      .founder-image-wrap {
+      .founder-image {
         max-width: 100%;
       }
 
@@ -547,10 +525,7 @@
 
   <section class="founder-section">
     <div class="container founder-grid">
-      <div class="founder-image-wrap">
-        <img class="founder-image" src="./andres-plain.jpg" alt="Andres Godoy">
-        <div class="image-overlay"></div>
-      </div>
+      <img class="founder-image" src="andres-plain.jpg" alt="Andres Godoy">
 
       <div>
         <p class="eyebrow">Founder</p>
@@ -578,42 +553,33 @@
   </section>
 
   <section id="contact" class="contact-section">
-  <div class="container contact-grid">
+    <div class="container contact-grid">
+      <div class="contact-panel">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2>Direct Access</h2>
 
-    <!-- CONTACT PANEL -->
-    <div class="contact-panel">
-      <div>
-        <p class="section-label">Contact</p>
-        <h2>Direct Access</h2>
-
-        <div class="contact-meta">
-          <p>Email: andres@contactcovercs.com</p>
-          <p>Website: contactcovercs.com</p>
+          <div class="contact-meta">
+            <p>Email: andres@contactcovercs.com</p>
+            <p>Website: contactcovercs.com</p>
+          </div>
         </div>
-
       </div>
-    </div>
 
-    <!-- PAYMENT PANEL -->
-    <div class="payment-panel">
-      <div>
-        <p class="section-label">Payment</p>
-        <h2>Secure Payment</h2>
-
-        <p class="contact-line">
-          Payments accepted via secure platforms.
-        </p>
-
-        <p class="contact-line" style="opacity: 0.6; font-size: 14px;">
-          Stripe • PayPal • Zelle available upon request
-        </p>
+      <div class="payment-panel">
+        <div>
+          <p class="section-label">Payment</p>
+          <h2>Secure Payment</h2>
+          <p class="contact-line">Payments accepted via secure platforms.</p>
+          <p class="payment-note">Stripe • PayPal • Zelle available upon request</p>
+        </div>
 
         <div class="cta-row">
-          <a href="#" class="btn-primary">PAY NOW</a>
+          <a href="https://YOUR-STRIPE-LINK" target="_blank" class="btn btn-light">Pay Now</a>
         </div>
-
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+</body>
+</html>
