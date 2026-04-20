@@ -578,36 +578,42 @@
   </section>
 
   <section id="contact" class="contact-section">
-    <div class="container contact-grid">
-      <div class="contact-panel">
-        <div>
-          <p class="section-label">Contact</p>
-          <h2>Direct Access</h2>
-<div class="contact-meta">
-  <p>Email: andres@contactcovercs.com</p>
-  <p>Website: contactcovercs.com</p>
-</div>
-</div>
+  <div class="container contact-grid">
 
-        <div class="cta-row">
-          
-        </div>
-      </div>
+    <!-- CONTACT PANEL -->
+    <div class="contact-panel">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2>Direct Access</h2>
 
-      <div class="payment-panel">
-        <div>
-          <p class="section-label">Payment</p>
-          <h2>Secure Payment</h2>
-          <p class="contact-line">Payments accepted via secure platforms.</p>
-          <p class="payment-note">Stripe • PayPal • Zelle available upon request</p>
+        <div class="contact-meta">
+          <p>Email: andres@contactcovercs.com</p>
+          <p>Website: contactcovercs.com</p>
         </div>
 
-        <div class="cta-row">
-          <a href="https://YOUR-STRIPE-LINK" target="_blank" class="btn btn-light">Pay Now</a>
-        </div>
       </div>
     </div>
-  </section>
 
-</body>
-</html>
+    <!-- PAYMENT PANEL -->
+    <div class="payment-panel">
+      <div>
+        <p class="section-label">Payment</p>
+        <h2>Secure Payment</h2>
+
+        <p class="contact-line">
+          Payments accepted via secure platforms.
+        </p>
+
+        <p class="contact-line" style="opacity: 0.6; font-size: 14px;">
+          Stripe • PayPal • Zelle available upon request
+        </p>
+
+        <div class="cta-row">
+          <a href="#" class="btn-primary">PAY NOW</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
