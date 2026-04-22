@@ -420,23 +420,50 @@
         min-height: auto;
       }
     }
+    .foundation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+  margin-top: 18px;
+}
+
+.foundation-item {
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  font-size: 0.98rem;
+  letter-spacing: 0.2px;
+  transition: all 0.2s ease;
+}
+
+.foundation-item span {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.foundation-item:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-1px);
+}
   </style>
 </head>
 <body>
 
   <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">Career Strategies</p>
-        <h1>Contact Cover</h1>
-        <div class="rule"></div>
-        <p class="lead">Private advisory for high-stakes career decisions.</p>
-        <p class="sublead">Strategic guidance for federal law enforcement, intelligence, and U.S. military careers.</p>
-        <p class="sublead strong">Led by a former <strong>Special Agent</strong> and <strong>Intelligence Officer</strong>.</p>
-        <div class="button-row">
-          <a href="#services" class="btn btn-light">View Services</a>
-          <a href="#contact" class="btn btn-dark">Request Consultation</a>
-        </div>
+ <div class="hero-card">
+  <p class="eyebrow">Operational Foundation</p>
+
+  <div class="foundation-grid">
+    <div class="foundation-item"><span>Local</span> Law Enforcement</div>
+    <div class="foundation-item"><span>Federal</span> Law Enforcement</div>
+    <div class="foundation-item"><span>Special Agent</span> Careers</div>
+    <div class="foundation-item"><span>Intelligence</span> Community</div>
+    <div class="foundation-item"><span>United States</span> Military</div>
+    <div class="foundation-item"><span>Special Operations</span> Community</div>
+  </div>
+</div>
       </div>
 
       <div class="card foundation">
