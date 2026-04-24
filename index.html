@@ -587,6 +587,70 @@
 h1 {
   letter-spacing: -0.02em;
 }  you want me to paste this?
+  /* ===== STRONG BLUE ACCENT FINAL ===== */
+
+:root {
+  --accent-blue: #3b82f6;
+  --accent-blue-soft: rgba(59, 130, 246, 0.18);
+  --accent-blue-border: rgba(59, 130, 246, 0.45);
+  --accent-blue-glow: rgba(59, 130, 246, 0.35);
+}
+
+/* Hero operational card */
+.hero-card {
+  background: linear-gradient(145deg, #0c2138, #07111d) !important;
+  border: 1px solid var(--accent-blue-border) !important;
+  box-shadow:
+    0 0 0 1px rgba(59,130,246,0.18),
+    0 0 40px rgba(59,130,246,0.12),
+    0 25px 80px rgba(0,0,0,0.65) !important;
+}
+
+/* Small cards inside Operational Foundation */
+.foundation-item {
+  border: 1px solid rgba(59,130,246,0.28) !important;
+  background: rgba(59,130,246,0.06) !important;
+}
+
+.foundation-item:hover {
+  border-color: var(--accent-blue) !important;
+  background: rgba(59,130,246,0.18) !important;
+  box-shadow: 0 0 22px var(--accent-blue-glow) !important;
+}
+
+/* Section labels */
+.eyebrow,
+.section-label {
+  color: rgba(147,197,253,0.85) !important;
+}
+
+/* Blue accent line under labels */
+.eyebrow::after,
+.section-label::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-top: 10px;
+  background: var(--accent-blue);
+  border-radius: 999px;
+}
+
+/* Mission / Differentiator / Coverage cards */
+.feature-card {
+  border: 1px solid rgba(59,130,246,0.22) !important;
+  box-shadow: 0 0 0 1px rgba(59,130,246,0.05) !important;
+}
+
+.feature-card:hover {
+  border-color: var(--accent-blue-border) !important;
+  box-shadow: 0 0 30px rgba(59,130,246,0.18) !important;
+}
+
+/* Horizontal divider lines */
+section {
+  border-color: rgba(59,130,246,0.12) !important;
+}
   </style>
 </head>
 <body>
