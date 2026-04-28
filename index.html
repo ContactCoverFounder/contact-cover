@@ -157,6 +157,7 @@
     }
 
     .foundation-item {
+      
       padding: 0 0 16px;
       margin: 0 0 16px;
       border-bottom: 1px solid rgba(255,255,255,.12);
@@ -503,198 +504,58 @@
   margin-top: 0;
 }
 
-.foundation-item {
-  padding: 14px 16px;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
-  background: rgba(255,255,255,0.02);
+/* ===== CLEAN ELITE ACCENT ===== */
+
   :root {
-  --accent-blue: #2f6df6;
-  --accent-blue-soft: rgba(47, 109, 246, 0.18);
-  --accent-blue-glow: rgba(47, 109, 246, 0.35);
+  --bg: #050505;
+  --panel: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.08);
+  --muted: rgba(255,255,255,0.68);
+  --soft: rgba(255,255,255,0.45);
+  --navy: #0a1a2f;
+  --light-panel: #e5e7eb;
+  --text-dark: #111111;
+
+  /* ✅ ADD THIS LINE */
+  --accent: #2f6df6;
 }
 
-/* HERO CARD (RIGHT PANEL) */
+
+/* subtle elite blue */
 .hero-card {
-  padding: 28px;
-  border-radius: 18px;
-  background: linear-gradient(
-    145deg,
-    rgba(10, 25, 45, 0.95),
-    rgba(5, 12, 22, 0.98)
-  );
-  border: 1px solid rgba(255,255,255,0.06);
-
-  /* subtle blue edge */
-  box-shadow:
-    0 0 0 1px rgba(47,109,246,0.15),
-    0 20px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(47,109,246,0.25);
 }
 
-/* FOUNDATION ITEMS */
+/* operational foundation items */
 .foundation-item {
-  padding: 16px 18px;
-  border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.02);
-  transition: all 0.25s ease;
-}
-
-/* 🔥 ELITE HOVER EFFECT */
-.foundation-item:hover {
-  border-color: var(--accent-blue);
-  background: var(--accent-blue-soft);
-  box-shadow: 0 0 20px var(--accent-blue-glow);
-  transform: translateY(-2px);
-}
-
-/* EYEBROW (SECTION LABELS) */
-.eyebrow {
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 2px;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-}
-
-/* BLUE ACCENT LINE (SUBTLE) */
-.eyebrow::after {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 2px;
-  margin-top: 8px;
-  background: var(--accent-blue);
-  border-radius: 2px;
-}
-
-/* FEATURE CARDS (MISSION / DIFFERENTIATOR / COVERAGE) */
-.feature-card {
-  border-radius: 16px;
-  padding: 26px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: all 0.25s ease;
-}
-
-/* 🔥 MATCHING HOVER SYSTEM */
-.feature-card:hover {
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 30px rgba(47,109,246,0.18);
-  transform: translateY(-3px);
-}
-
-/* HEADLINE SHARPENING */
-h1 {
-  letter-spacing: -0.02em;
-}  you want me to paste this?
-  /* ===== STRONG BLUE ACCENT FINAL ===== */
-
-:root {
-  --accent-blue: #3b82f6;
-  --accent-blue-soft: rgba(59, 130, 246, 0.18);
-  --accent-blue-border: rgba(59, 130, 246, 0.45);
-  --accent-blue-glow: rgba(59, 130, 246, 0.35);
-}
-
-/* Hero operational card */
-.hero-card {
-  background: linear-gradient(145deg, #0c2138, #07111d) !important;
-  border: 1px solid var(--accent-blue-border) !important;
-  box-shadow:
-    0 0 0 1px rgba(59,130,246,0.18),
-    0 0 40px rgba(59,130,246,0.12),
-    0 25px 80px rgba(0,0,0,0.65) !important;
-}
-
-/* Small cards inside Operational Foundation */
-.foundation-item {
-  border: 1px solid rgba(59,130,246,0.28) !important;
-  background: rgba(59,130,246,0.06) !important;
 }
 
 .foundation-item:hover {
-  border-color: var(--accent-blue) !important;
-  background: rgba(59,130,246,0.18) !important;
-  box-shadow: 0 0 22px var(--accent-blue-glow) !important;
+  border-color: var(--accent);
+  background: rgba(47,109,246,0.08);
 }
 
-/* Section labels */
-.eyebrow,
-.section-label {
-  color: rgba(147,197,253,0.85) !important;
-}
-
-/* Blue accent line under labels */
+/* section label accent line */
 .eyebrow::after,
 .section-label::after {
   content: "";
   display: block;
-  width: 34px;
-  height: 2px;
+  width: 22px;
+  height: 1px;
   margin-top: 10px;
-  background: var(--accent-blue);
-  border-radius: 999px;
+  background: var(--accent);
 }
 
-/* Mission / Differentiator / Coverage cards */
-.feature-card {
-  border: 1px solid rgba(59,130,246,0.22) !important;
-  box-shadow: 0 0 0 1px rgba(59,130,246,0.05) !important;
-}
-
+/* feature cards */
 .feature-card:hover {
-  border-color: var(--accent-blue-border) !important;
-  box-shadow: 0 0 30px rgba(59,130,246,0.18) !important;
+  border-color: var(--accent);
 }
 
-/* Horizontal divider lines */
-section {
-  border-color: rgba(59,130,246,0.12) !important;
+h1 {
+  letter-spacing: -0.02em;
 }
 
-  /* ===== PAYMENT SECTION (ELITE STYLE) ===== */
-
-.payment-section {
-  padding: 90px 0 80px;
-  border-top: 1px solid rgba(59,130,246,0.12);
-}
-
-.payment-section h2 {
-  font-size: 2.4rem;
-  margin: 12px 0 32px;
-}
-
-.payment-card {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 28px;
-
-  padding: 32px;
-  border-radius: 18px;
-
-  background: linear-gradient(145deg, #0c2138, #07111d);
-  border: 1px solid rgba(59,130,246,0.35);
-
-  box-shadow:
-    0 0 40px rgba(59,130,246,0.10),
-    0 20px 60px rgba(0,0,0,0.6);
-}
-
-.payment-card h3 {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-}
-
-.payment-card p {
-  color: rgba(255,255,255,0.72);
-  line-height: 1.6;
-}
-
-.payment-detail {
-  margin-top: 16px;
-  color: #ffffff;
-  font-weight: 700;
-}
 
 .payment-note {
   border: 1px solid rgba(255,255,255,0.08);
@@ -708,6 +569,22 @@ section {
   .payment-card {
     grid-template-columns: 1fr;
   }
+}
+  /* ===== BLACK BRIEF SYSTEM ===== */
+
+:root {
+  --bg: #050505;
+  --panel: #0b0f14;
+  --panel-soft: #0e141b;
+
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.14);
+
+  --text: rgba(255,255,255,0.92);
+  --text-muted: rgba(255,255,255,0.62);
+
+  /* controlled accent (not flashy) */
+  --accent: #2f6df6;
 }
   </style>
 </head>
@@ -793,7 +670,7 @@ section {
       </div>
     </div>
   </section>
-</section>  <!-- end of services -->
+
 
 
   <section class="container edge">
