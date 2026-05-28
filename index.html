@@ -685,7 +685,7 @@ h1 {
 
         <div class="card service-secondary">
           <p class="section-label dark">Secondary</p>
-          <h3>3-Pack Advisory Retainer</h3>
+          <h3>3-Pack Advisory Modul</h3>
           <p class="price dark">$249.00 Per Package</p>
           <div class="mini-grid">
             <div class="mini-card light">1:1 Consultation Sessions (3x/1hr)</div>
@@ -789,6 +789,40 @@ h1 {
       </div>
     </div>
   </section>
+<div id="ModulModal" class="modal-overlay">
+  
+  <div class="-modal">
 
+    <button class="modal-close" onclick="closeModulModal()">×</button>
+
+    <h2>Choose Your 3-Pack Session</h2>
+    <p>Select the session you want to schedule.</p>
+
+    <a class="modal-option" href="https://calendly.com/andres-contactcovercs/3-pack-1-hr-sessions">
+      3 Pack - 1 hr Sessions (Initial)
+    </a>
+
+    <a class="modal-option" href="https://calendly.com/andres-contactcovercs/3-pack-1-hr-session-session-2">
+      3 Pack 1-hr Session (Session 2)
+    </a>
+
+    <a class="modal-option" href="https://calendly.com/andres-contactcovercs/3-pack-1-hr-session-session-3">
+      3 Pack 1-hr Session (Session 3)
+    </a>
+  </div>
+</div>
+  <script>
+  function openModulModal() {
+    document
+      .getElementById("ModulModal")
+      .classList.add("active");
+  }
+
+  function closeModulModal() {
+    document
+      .getElementById("ModulModal")
+      .classList.remove("active");
+  }
+</script>
 </body>
 </html>
