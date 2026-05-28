@@ -9,7 +9,57 @@
       --bg: #050505;
       --panel: rgba(255,255,255,0.03);
       --border: rgba(255,255,255,0.08);
-      --muted: rgba(255,255,255,0.68);
+      --muted: rgba(255,255,255,0.68);.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.78);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.retainer-modal,
+.-modal {
+  width: min(560px, 92vw);
+  background: #0b0f14;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px;
+  padding: 34px;
+  position: relative;
+  box-shadow: 0 30px 100px rgba(0,0,0,.6);
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.modal-option {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 18px 20px;
+  margin-top: 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.modal-option:hover {
+  border-color: #2f6df6;
+  background: rgba(47,109,246,.12);
+}
       --soft: rgba(255,255,255,0.45);
       --navy: #0a1a2f;
       --light-panel: #e5e7eb;
@@ -411,6 +461,58 @@
       margin-top: 28px;
     }
 
+
+    .modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.78);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.retainer-modal,
+.-modal {
+  width: min(560px, 92vw);
+  background: #0b0f14;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px;
+  padding: 34px;
+  position: relative;
+  box-shadow: 0 30px 100px rgba(0,0,0,.6);
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.modal-option {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 18px 20px;
+  margin-top: 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.modal-option:hover {
+  border-color: #2f6df6;
+  background: rgba(47,109,246,.12);
+}
     @media (max-width: 900px) {
       .hero-grid,
       .features,
@@ -694,13 +796,14 @@ h1 {
             <div class="mini-card light">Personalized Support</div>
           </div>
           <div class="button-row">
-  <a 
-    href="https://calendly.com/andres-contactcovercs/3-pack-1-hr-sessions"
-    target="_blank"
-    class="btn btn-dark"
-  >
-    Request
-  </a>
+          
+<button
+  class="btn btn-dark"
+  onclick="openModulModal()"
+>
+  Request
+</button>
+           
 </div>
         </div>
       </div>
@@ -790,8 +893,9 @@ h1 {
     </div>
   </section>
 <div id="ModulModal" class="modal-overlay">
+
+  <div class="retainer-modal">
   
-  <div class="-modal">
 
     <button class="modal-close" onclick="closeModulModal()">×</button>
 
@@ -816,7 +920,7 @@ h1 {
     document
       .getElementById("ModulModal")
       .classList.add("active");
-  }
+  } 
 
   function closeModulModal() {
     document
@@ -824,5 +928,6 @@ h1 {
       .classList.remove("active");
   }
 </script>
+  
 </body>
 </html>
