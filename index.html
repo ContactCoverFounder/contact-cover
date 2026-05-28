@@ -6,10 +6,18 @@
   <title>Contact Cover</title>
   <style>
     :root {
-      --bg: #050505;
-      --panel: rgba(255,255,255,0.03);
-      --border: rgba(255,255,255,0.08);
-      --muted: rgba(255,255,255,0.68);.modal-overlay {
+  --bg: #08111f;
+  --panel: rgba(15,25,40,0.72);
+  --border: rgba(120,160,255,0.12);
+  --muted: rgba(220,230,255,0.68);
+  --soft: rgba(220,230,255,0.42);
+  --navy: #12233d;
+  --light-panel: #dfe7f5;
+  --text-dark: #101828;
+  --accent: #4d8dff;
+}
+
+.modal-overlay {
   display: none;
   position: fixed;
   inset: 0;
@@ -69,15 +77,35 @@
     * { box-sizing: border-box; }
 
     html, body {
-      margin: 0;
-      padding: 0;
-      background: #000;
-      color: #fff;
-      font-family: Inter, Arial, sans-serif;
+     background:
+linear-gradient(
+  180deg,
+  #08111f 0%,
+  #0c1830 45%,
+  #132540 100%
+);
     }
 
     body {
-      background: var(--bg);
+      body {
+  background:
+  radial-gradient(circle at top left,
+    rgba(77,141,255,0.10),
+    transparent 30%),
+
+  radial-gradient(circle at bottom right,
+    rgba(100,140,255,0.08),
+    transparent 35%),
+
+  linear-gradient(
+    180deg,
+    #08111f 0%,
+    #0d1728 45%,
+    #132540 100%
+  );
+
+  background-attachment: fixed;
+}
     }
 
     a {
@@ -621,15 +649,28 @@
 
 /* ===== CLEAN ELITE ACCENT ===== */
 
-  :root {
-  --bg: #050505;
-  --panel: rgba(255,255,255,0.03);
-  --border: rgba(255,255,255,0.08);
-  --muted: rgba(255,255,255,0.68);
-  --soft: rgba(255,255,255,0.45);
-  --navy: #0a1a2f;
-  --light-panel: #e5e7eb;
-  --text-dark: #111111;
+:root {
+  --bg: #08111f;
+
+  --panel: rgba(15,25,40,0.72);
+  --panel-soft: #101b2d;
+
+  --border: rgba(120,160,255,0.12);
+  --border-strong: rgba(120,160,255,0.18);
+
+  --text: rgba(255,255,255,0.94);
+  --text-muted: rgba(220,230,255,0.68);
+
+  --soft: rgba(220,230,255,0.42);
+
+  --navy: #12233d;
+
+  --light-panel: #dfe7f5;
+
+  --text-dark: #101828;
+
+  --accent: #4d8dff;
+}
 
   /* ✅ ADD THIS LINE */
   --accent: #2f6df6;
