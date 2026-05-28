@@ -76,17 +76,40 @@
 
     * { box-sizing: border-box; }
 
-    html, body {
-     background:
-linear-gradient(
-  180deg,
-  #08111f 0%,
-  #0c1830 45%,
-  #132540 100%
-);
-    }
-
     body {
+  margin: 0;
+  color: #fff;
+  font-family: Inter, Arial, sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(120,170,255,0.18),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at top right,
+      rgba(140,190,255,0.12),
+      transparent 32%
+    ),
+
+    radial-gradient(
+      circle at bottom center,
+      rgba(90,130,220,0.16),
+      transparent 42%
+    ),
+
+    linear-gradient(
+      180deg,
+      #15263f 0%,
+      #1d3457 38%,
+      #27456f 70%,
+      #20395d 100%
+    );
+
+  background-attachment: fixed;
+}
       body {
   background:
   radial-gradient(circle at top left,
@@ -652,7 +675,7 @@ linear-gradient(
 :root {
   --bg: #08111f;
 
-  --panel: rgba(15,25,40,0.72);
+  --panel: rgba(25,45,75,0.55);
   --panel-soft: #101b2d;
 
   --border: rgba(120,160,255,0.12);
@@ -663,7 +686,7 @@ linear-gradient(
 
   --soft: rgba(220,230,255,0.42);
 
-  --navy: #12233d;
+  --navy: #27456f;
 
   --light-panel: #dfe7f5;
 
